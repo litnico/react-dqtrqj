@@ -1,30 +1,19 @@
-import React from 'react';
-import {createStore} from 'redux'
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import storeReduce from './reducers/index'
-import { Provider } from 'react-redux';
+export  const addTodo =(todo) => {
+    
+     return{
+        type:'ADD_TODO',
+        todo
+     
+     }
+   
+  }
 
-let todos =[
-  'giocare',
-  'studiare',
-  'inter'
-]
-
-
-
-const store = createStore(storeReduce,{todos:[...todos]});
-
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+export const  removeTodo =(i)=>{
+      return{
+          type:'REMOVE_TODO',
+          id:i
+      }
+    
+     
+    
+  }
